@@ -16,5 +16,11 @@ struct Args {
 fn main() {
     let args = Args::parse();
 
-    println!("Hello, world!");
+    if args.literally {
+        println!("I am literally this cat");
+    }
+
+    println!("{}", args.count);
+
+    println!("Meow!");
 }
