@@ -1,4 +1,4 @@
-pub fn print_cats(literally: bool, count: u32) {
+pub fn print_cats(literally: bool, count: u16) {
     if literally {
         println!("I am LITERALLY this cat:");
     }

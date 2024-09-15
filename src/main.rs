@@ -1,13 +1,18 @@
 use clap::Parser;
+use clap_num::number_range;
 mod meow;
+
+fn valid_cat_count(s: &str) -> Result<u16, String> {
+    number_range(s, 0, 65535)
+}
 
 #[derive(Parser)]
 #[command(version, about, long_about = None)]
 /// Print ASCII cats to your terminal
 struct Args {
     /// How many cats to print
-    #[arg(short = 'c', long = "count", default_value_t = 1)]
-    count: u32,
+    #[arg(short = 'c', long = "count", default_value_t = 1, value_parser = valid_cat_count)]
+    count: u16,
 
     /// Are you literally this cat?
     #[arg(short = 'l', long = "literally", action)]
