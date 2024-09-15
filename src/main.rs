@@ -1,4 +1,5 @@
 use clap::Parser;
+mod meow;
 
 #[derive(Parser)]
 #[command(version, about, long_about = None)]
@@ -6,7 +7,7 @@ use clap::Parser;
 struct Args {
     /// How many cats to print
     #[arg(short = 'c', long = "count", default_value_t = 1)]
-    count: u8,
+    count: u32,
 
     /// Are you literally this cat?
     #[arg(short = 'l', long = "literally", action)]
@@ -16,11 +17,5 @@ struct Args {
 fn main() {
     let args = Args::parse();
 
-    if args.literally {
-        println!("I am literally this cat");
-    }
-
-    println!("{}", args.count);
-
-    println!("Meow!");
+    meow::print_cats(args.literally, args.count);
 }
