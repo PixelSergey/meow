@@ -2,6 +2,14 @@
 name = "meow"
 version = "1.0.0"
 edition = "2021"
+authors = ["PixelSergey <sergey.ichtchenko@gmail.com>"]
+license = "MIT"
+description = "Print ASCII cats to your terminal"
+readme = "README.md"
+homepage = "https://github.com/PixelSergey/meow"
+repository = "https://github.com/PixelSergey/meow"
+keywords = ["cli", "cats", "terminal", "utility", "text"]
+categories = ["command-line-utilities"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
