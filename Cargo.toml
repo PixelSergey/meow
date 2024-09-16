@@ -8,7 +8,7 @@ description = "Print ASCII cats to your terminal"
 readme = "README.md"
 homepage = "https://github.com/PixelSergey/meow"
 repository = "https://github.com/PixelSergey/meow"
-keywords = ["cli", "cats", "terminal", "utility", "text", "game"]
+keywords = ["cli", "terminal", "utility", "text", "game"]
 categories = ["command-line-utilities"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
