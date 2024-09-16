@@ -32,14 +32,17 @@ fn print_cat(cat: &String) {
     println!("{}", cat);
 }
 
-pub fn print_cats(literally: bool, count: u16) {
-    let cat_paths = load_cats();
-
+fn print_literal(literally: bool){
     if literally {
         println!("I am LITERALLY this cat:");
     }
+}
+
+pub fn print_cats(literally: bool, count: u16) {
+    let cat_paths = load_cats();
 
     for _ in 0..count {
+        print_literal(literally);
         let cat_path = pick_cat(&cat_paths);
         let cat_art = load_cat(&cat_path);
         print_cat(&cat_art);
