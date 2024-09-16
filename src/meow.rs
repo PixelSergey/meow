@@ -1,12 +1,15 @@
-use std::fs;
+use include_dir::{include_dir, Dir};
 use rand::seq::SliceRandom;
 
+static CAT_DIR: Dir<'_> = include_dir!("$CARGO_MANIFEST_DIR/cats");
+
 fn load_cats() -> Vec<String> {
-    let paths = fs::read_dir("./cats").unwrap();
     let mut result: Vec<String> = Vec::new();
-    
-    for path in paths {
-        result.push(path.unwrap().path().display().to_string());
+
+    let glob = "*.txt";
+
+    for path in CAT_DIR.find(glob).unwrap() {
+        result.push(path.path().display().to_string());
     }
 
     return result;
@@ -23,8 +26,8 @@ fn pick_cat(options: &Vec<String>) -> String {
 }
 
 fn load_cat(path: &String) -> String {
-    let contents = fs::read_to_string(path)
-        .expect("Unable to read catfile");
+    let file = CAT_DIR.get_file(path).unwrap();
+    let contents = file.contents_utf8().unwrap().to_string();
     return contents;
 }
 
