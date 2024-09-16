@@ -1,8 +1,17 @@
+//! Cat processing functions
+//! 
+//! This module provides functions to:
+//! - Load a list of catpaths from the `cats` directory
+//! - Pick a random path out of the list
+//! - Load the data from a certain catfile
+//! - Print the catfile data and the literal string
+
 use include_dir::{include_dir, Dir};
 use rand::seq::SliceRandom;
 
 static CAT_DIR: Dir<'_> = include_dir!("$CARGO_MANIFEST_DIR/cats");
 
+/// Load a vector of cat paths from the CAT_DIR folders
 fn load_cats() -> Vec<String> {
     let mut result: Vec<String> = Vec::new();
 
@@ -15,6 +24,15 @@ fn load_cats() -> Vec<String> {
     return result;
 }
 
+/// Pick a cat path from a vector of cat paths
+/// 
+/// # Arguments
+/// 
+/// * `options` - A vector containing string paths to catfiles
+/// 
+/// # Returns
+/// 
+/// One of the strings in `options`, randomly picked
 fn pick_cat(options: &Vec<String>) -> String {
     let mut rng = rand::thread_rng();
     let result = options.choose(&mut rng);
@@ -25,22 +43,47 @@ fn pick_cat(options: &Vec<String>) -> String {
     }
 }
 
+/// Load data from a catfile
+/// 
+/// # Arguments
+/// 
+/// * `path` - A string path to a catfile
+/// 
+/// # Returns
+/// 
+/// A string containing the contents of the catfile
 fn load_cat(path: &String) -> String {
     let file = CAT_DIR.get_file(path).unwrap();
     let contents = file.contents_utf8().unwrap().to_string();
     return contents;
 }
 
+/// Print cat data to the screen
+/// 
+/// # Arguments
+/// 
+/// * `cat` - Cat data
 fn print_cat(cat: &String) {
     println!("{}", cat);
 }
 
+/// Print the literal string
+/// 
+/// # Arguments
+/// 
+/// * `literally` - A boolean, whether to print the literal string or not
 fn print_literal(literally: bool){
     if literally {
         println!("I am LITERALLY this cat:");
     }
 }
 
+/// Print a certain number of randomly picked cats with a literal string
+/// 
+/// # Arguments
+/// 
+/// * `literally` - A boolean, whether to print the literal string or not
+/// * `count` - How many cats to print
 pub fn print_cats(literally: bool, count: u16) {
     let cat_paths = load_cats();
 

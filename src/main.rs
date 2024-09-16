@@ -2,6 +2,7 @@ use clap::Parser;
 use clap_num::number_range;
 mod meow;
 
+/// Helper function to validate the command-line numeric argument
 fn valid_cat_count(s: &str) -> Result<u16, String> {
     number_range(s, 0, 65535)
 }
@@ -19,6 +20,7 @@ struct Args {
     literally: bool
 }
 
+/// Prints ASCII cats depending on command-line parameters
 fn main() {
     let args = Args::parse();
 
