@@ -1,6 +1,6 @@
 [package]
 name = "meow"
-version = "0.1.0"
+version = "1.0.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
@@ -8,3 +8,4 @@ edition = "2021"
 [dependencies]
 clap = { version = "4.5.17", features = ["derive"] }
 clap-num = "1.1.1"
+rand = "0.8.5"
