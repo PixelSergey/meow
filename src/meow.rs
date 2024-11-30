@@ -11,7 +11,7 @@ use rand::seq::SliceRandom;
 
 static CAT_DIR: Dir<'_> = include_dir!("$CARGO_MANIFEST_DIR/cats");
 
-/// Load a vector of cat paths from the `CAT_DIR` folders
+/// Load a vector of cat paths from the `CAT_DIR` folder
 fn load_cats() -> Vec<String> {
     let mut result: Vec<String> = Vec::new();
 
