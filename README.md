@@ -66,4 +66,4 @@ The binary will then be built to some directory that will be output to your comm
 
 1. Install Rust
 1. Clone this repository
-1. Build and run with `cargo run` or `cargo run -- <FLAGS>`
+1. Build and run with `cargo run` or `cargo run -- [OPTIONS]`
