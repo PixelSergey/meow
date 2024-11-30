@@ -21,7 +21,7 @@ fn load_cats() -> Vec<String> {
         result.push(path.path().display().to_string());
     }
 
-    return result;
+    result
 }
 
 /// Pick a cat path from a vector of cat paths
@@ -38,8 +38,8 @@ fn pick_cat(options: &Vec<String>) -> String {
     let result = options.choose(&mut rng);
 
     match result {
-        None => return "Meow".to_string(),
-        Some(path) => return path.to_string(),
+        None => "Meow".to_string(),
+        Some(path) => path.to_string(),
     }
 }
 
@@ -55,7 +55,7 @@ fn pick_cat(options: &Vec<String>) -> String {
 fn load_cat(path: &String) -> String {
     let file = CAT_DIR.get_file(path).unwrap();
     let contents = file.contents_utf8().unwrap().to_string();
-    return contents;
+    contents
 }
 
 /// Print cat data to the screen
