@@ -22,7 +22,7 @@ struct Args {
 
 /// Prints ASCII cats depending on command-line parameters
 fn main() {
-    let args = Args::parse();
+    let args: Args = Args::parse();
 
     meow::print_cats(args.literally, args.count);
 }
