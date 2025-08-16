@@ -78,7 +78,7 @@ The binary will then be built to some directory that will be output to your comm
 
 ## Packaging shenanigans
 
-The goal of this package is to eventually be in every Linux distro and more (who doesn't like cats?)
+The goal of this package is to eventually be in every Linux package repository and more (who doesn't like cats?)
 Current status:
 
 - [x] NixOS
@@ -88,7 +88,6 @@ Current status:
 - [ ] Fedora
 - [ ] EPEL
 - [ ] Homebrew
-- [ ] MacPorts
 - [ ] WinGet
 - [ ] Extras
   - [ ] Gentoo
