@@ -75,3 +75,30 @@ The binary will then be built to some directory that will be output to your comm
 1. Install Rust
 1. Clone this repository
 1. Build and run with `cargo run` or `cargo run -- [OPTIONS]`
+
+## Packaging shenanigans
+
+The goal of this package is to eventually be in every Linux distro and more (who doesn't like cats?)
+Current status:
+
+- [x] NixOS
+- [x] Debian Stable
+- [x] Ubuntu
+- [ ] AUR
+- [ ] Fedora
+- [ ] EPEL
+- [ ] Homebrew
+- [ ] MacPorts
+- [ ] WinGet
+- [ ] Extras
+  - [ ] Gentoo
+  - [ ] Alpine
+  - [ ] OpenBSD
+  - [ ] FreeBSD
+  - [ ] openSUSE
+
+## Credits
+
+- Cats
+- Meowing
+- [How to exit vim](https://stackoverflow.com/questions/11828270/how-do-i-exit-the-vim-editor)
