@@ -63,8 +63,10 @@ fn load_cat(path: &String) -> String {
 /// # Arguments
 /// 
 /// * `cat` - Cat data
-fn print_cat(cat: &String) {
+/// * `newline` - Whether to print an extra newline after the cat data
+fn print_cat(cat: &String, newline: bool) {
     println!("{cat}");
+    if newline { println!(); }
 }
 
 /// Print the literal string
@@ -74,7 +76,7 @@ fn print_cat(cat: &String) {
 /// * `literally` - A boolean, whether to print the literal string or not
 fn print_literal(literally: bool){
     if literally {
-        println!("I am LITERALLY this cat:");
+        println!("I am LITERALLY this cat:\n");
     }
 }
 
@@ -87,10 +89,10 @@ fn print_literal(literally: bool){
 pub fn print_cats(literally: bool, count: u16) {
     let cat_paths = load_cats();
 
-    for _ in 0..count {
+    for i in 0..count {
         print_literal(literally);
         let cat_path = pick_cat(&cat_paths);
         let cat_art = load_cat(&cat_path);
-        print_cat(&cat_art);
+        print_cat(&cat_art, i<count-1);
     }
 }
