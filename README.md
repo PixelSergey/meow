@@ -1,10 +1,18 @@
 # Meow
 
+
 Print ASCII cats to your terminal!
 
 This is a simple command-line tool to display cute little kitties :D
 
 I love cats
+
+[![Number of repositories](https://repology.org/badge/tiny-repos/meow-ascii-cats.svg)](https://repology.org/project/meow-ascii-cats/versions)
+<br />
+[![latest packaged version(s)](https://repology.org/badge/latest-versions/meow-ascii-cats.svg)](https://repology.org/project/meow-ascii-cats/versions)
+<br />
+[![Packaging status](https://repology.org/badge/vertical-allrepos/meow-ascii-cats.svg)](https://repology.org/project/meow-ascii-cats/versions)
+
 
 ## Usage
 
