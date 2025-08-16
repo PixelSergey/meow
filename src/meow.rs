@@ -12,7 +12,7 @@ use rand::seq::SliceRandom;
 static CAT_DIR: Dir<'_> = include_dir!("$CARGO_MANIFEST_DIR/cats");
 
 /// Load a vector of cat paths from the `CAT_DIR` folder
-fn load_cats() -> Vec<String> {
+fn load_cat_paths() -> Vec<String> {
     let mut result: Vec<String> = Vec::new();
 
     let glob = "*.txt";
@@ -87,7 +87,7 @@ fn print_literal(literally: bool){
 /// * `literally` - A boolean, whether to print the literal string or not
 /// * `count` - How many cats to print
 pub fn print_cats(literally: bool, count: u16) {
-    let cat_paths = load_cats();
+    let cat_paths = load_cat_paths();
 
     for i in 0..count {
         print_literal(literally);
