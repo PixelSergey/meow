@@ -79,12 +79,13 @@ The binary will then be built to some directory that will be output to your comm
 ## Packaging shenanigans
 
 The goal of this package is to eventually be in every Linux package repository and more (who doesn't like cats?)
-Current status:
+You can see the progress here: [`meow-ascii cats` on Repology](https://repology.org/project/meow-ascii-cats).
+TL;DR current status:
 
 - [x] NixOS
 - [x] Debian Stable
 - [x] Ubuntu
-- [ ] AUR
+- [x] AUR
 - [ ] Fedora
 - [ ] EPEL
 - [ ] Homebrew
