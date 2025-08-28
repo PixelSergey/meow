@@ -61,7 +61,7 @@ sudo apt install meow
 
 Try the package out by running `nix-shell -p meow`.
 
-If you want to add it to your configuration, you can add the following to your configuration:
+If you want to install it permanently, add the following lines to your config (or adapt as necessary):
 
 ```nix
 environment.systemPackages = with pkgs; [
