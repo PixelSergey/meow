@@ -26,19 +26,36 @@ Options:
   -V, --version        Print version
 ```
 
+## Packaging shenanigans
+
+The goal of this package is to eventually be in every Linux package repository and more (who doesn't like cats?)
+You can see the progress here: [`meow-ascii cats` on Repology](https://repology.org/project/meow-ascii-cats).
+TL;DR current status:
+
+- [x] NixOS
+- [x] Debian Stable
+- [x] Ubuntu
+- [x] AUR
+- [ ] Fedora
+- [ ] EPEL
+- [x] Homebrew
+- [ ] WinGet
+- [ ] Extras
+  - [ ] Gentoo
+  - [ ] Alpine
+  - [ ] OpenBSD
+  - [ ] FreeBSD
+  - [ ] openSUSE
+
 ## Installation
 
 ### Ubuntu / Debian / etc
 
-This package is available through apt. Run:
-
+Just run:
 ```sh
 sudo apt update
 sudo apt install meow
 ```
-
-Note: the Debian package is currently being rolled out and may not be available on all systems.
-Currently available in: Ubuntu 25.04, Debian Testing.
 
 ### Nix / Nixos
 
@@ -52,13 +69,24 @@ environment.systemPackages = with pkgs; [
 ];
 ```
 
-Or, if you are using Home Manager:
+### Arch Linux / AUR
 
-```nix
-home.packages = with pkgs; [
-  meow
-];
+Just run the following to install from the AUR:
+```sh
+git clone https://aur.archlinux.org/meow.git
+cd meow
+makepkg -si
 ```
+
+### Mac OS / Homebrew
+
+Just run
+```sh
+brew install pixelsergey/core/meow
+```
+
+Note that the Homebrew maintainers didn't let me merge my package into the main repo since it "wasn't popular enough".
+I think they just don't like cats.
 
 ### From Cargo
 
@@ -76,29 +104,8 @@ The binary will then be built to some directory that will be output to your comm
 1. Clone this repository
 1. Build and run with `cargo run` or `cargo run -- [OPTIONS]`
 
-## Packaging shenanigans
-
-The goal of this package is to eventually be in every Linux package repository and more (who doesn't like cats?)
-You can see the progress here: [`meow-ascii cats` on Repology](https://repology.org/project/meow-ascii-cats).
-TL;DR current status:
-
-- [x] NixOS
-- [x] Debian Stable
-- [x] Ubuntu
-- [x] AUR
-- [ ] Fedora
-- [ ] EPEL
-- [ ] Homebrew
-- [ ] WinGet
-- [ ] Extras
-  - [ ] Gentoo
-  - [ ] Alpine
-  - [ ] OpenBSD
-  - [ ] FreeBSD
-  - [ ] openSUSE
-
 ## Credits
 
 - Cats
-- Meowing
+- The concept of meowing
 - [How to exit vim](https://stackoverflow.com/questions/11828270/how-do-i-exit-the-vim-editor)
