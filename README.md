@@ -36,8 +36,8 @@ TL;DR current status:
 - [x] Debian Stable
 - [x] Ubuntu
 - [x] AUR
-- [ ] Fedora
-- [ ] EPEL
+- [x] Fedora
+- [x] EPEL
 - [x] Homebrew
 - [ ] WinGet
 - [ ] Extras
@@ -76,6 +76,12 @@ Just run the following to install from the AUR:
 git clone https://aur.archlinux.org/meow.git
 cd meow
 makepkg -si
+```
+
+### Fedora / Red Hat Enterprise Linux (RHEL)
+
+```sh
+sudo dnf install meow
 ```
 
 ### Mac OS / Homebrew
