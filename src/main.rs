@@ -3,8 +3,8 @@ use clap_num::number_range;
 mod meow;
 
 /// Helper function to validate the command-line numeric argument
-fn valid_cat_count(s: &str) -> Result<u16, String> {
-    number_range(s, 0, 65535)
+fn valid_cat_count(s: &str) -> Result<u64, String> {
+    number_range(s, 0, std::u64::MAX)
 }
 
 #[derive(Parser)]
@@ -13,11 +13,11 @@ fn valid_cat_count(s: &str) -> Result<u16, String> {
 struct Args {
     /// How many cats to print
     #[arg(short = 'c', long = "count", default_value_t = 1, value_parser = valid_cat_count)]
-    count: u16,
+    count: u64,
 
     /// Are you literally this cat?
     #[arg(short = 'l', long = "literally", action)]
-    literally: bool
+    literally: bool,
 }
 
 /// Prints ASCII cats depending on command-line parameters

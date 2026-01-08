@@ -1,5 +1,5 @@
 //! Cat processing functions
-//! 
+//!
 //! This module provides functions to:
 //! - Load a list of catpaths from the `cats` directory
 //! - Pick a random path out of the list
@@ -25,13 +25,13 @@ fn load_cat_paths() -> Vec<String> {
 }
 
 /// Pick a cat path from a vector of cat paths
-/// 
+///
 /// # Arguments
-/// 
+///
 /// * `options` - A vector containing string paths to catfiles
-/// 
+///
 /// # Returns
-/// 
+///
 /// One of the strings in `options`, randomly picked
 fn pick_cat(options: &Vec<String>) -> String {
     let mut rng: rand::prelude::ThreadRng = rand::rng();
@@ -44,13 +44,13 @@ fn pick_cat(options: &Vec<String>) -> String {
 }
 
 /// Load data from a catfile
-/// 
+///
 /// # Arguments
-/// 
+///
 /// * `path` - A string path to a catfile
-/// 
+///
 /// # Returns
-/// 
+///
 /// A string containing the contents of the catfile
 fn load_cat(path: &String) -> String {
     let file: &include_dir::File<'_> = CAT_DIR.get_file(path).unwrap();
@@ -59,40 +59,42 @@ fn load_cat(path: &String) -> String {
 }
 
 /// Print cat data to the screen
-/// 
+///
 /// # Arguments
-/// 
+///
 /// * `cat` - Cat data
 /// * `newline` - Whether to print an extra newline after the cat data
 fn print_cat(cat: &String, newline: bool) {
     println!("{cat}");
-    if newline { println!(); }
+    if newline {
+        println!();
+    }
 }
 
 /// Print the literal string
-/// 
+///
 /// # Arguments
-/// 
+///
 /// * `literally` - A boolean, whether to print the literal string or not
-fn print_literal(literally: bool){
+fn print_literal(literally: bool) {
     if literally {
         println!("I am LITERALLY this cat:\n");
     }
 }
 
 /// Print a certain number of randomly picked cats with a literal string
-/// 
+///
 /// # Arguments
-/// 
+///
 /// * `literally` - A boolean, whether to print the literal string or not
 /// * `count` - How many cats to print
-pub fn print_cats(literally: bool, count: u16) {
+pub fn print_cats(literally: bool, count: u64) {
     let cat_paths: Vec<String> = load_cat_paths();
 
     for i in 0..count {
         print_literal(literally);
         let cat_path: String = pick_cat(&cat_paths);
         let cat_art: String = load_cat(&cat_path);
-        print_cat(&cat_art, i<count-1);
+        print_cat(&cat_art, i < count - 1);
     }
 }
